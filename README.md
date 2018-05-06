@@ -41,3 +41,9 @@ There are few other aggregation packages out there. All of them written with som
 They also don't work with custom Mongo drivers as well.
 
 And this package is short and simple. (~20 LOC)
+
+
+## What the fork?!
+meteorhacks/meteor-aggregate seems pretty unmaintained, which is sad :/
+Meteor 1.7 and it's upgrade to mongodriver v3 introduced some breaking changes
+I want to incorporate https://github.com/meteorhacks/meteor-aggregate/pull/41/files

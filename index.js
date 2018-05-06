@@ -1,6 +1,7 @@
-wrapAsync = (Meteor.wrapAsync)? Meteor.wrapAsync : Meteor._wrapAsync;
+wrapAsync = Meteor.wrapAsync || Meteor._wrapAsync;
+
 Mongo.Collection.prototype.aggregate = function(pipelines, options) {
-  var coll;
+  let coll;
   if (this.rawCollection) {
     // >= Meteor 1.0.4
     coll = this.rawCollection();
@@ -8,5 +9,9 @@ Mongo.Collection.prototype.aggregate = function(pipelines, options) {
 	// < Meteor 1.0.4
     coll = this._getCollection();
   }
+  if(MongoInternals.NpmModules.mongodb.version[0] === '3') {
+    return (wrapAsync(coll.aggregate.bind(coll))(pipelines, options)).toArray();
+  }
   return wrapAsync(coll.aggregate.bind(coll))(pipelines, options);
 }
+
