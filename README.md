@@ -1,6 +1,6 @@
 [![](https://api.travis-ci.org/meteorhacks/meteor-aggregate.svg)](https://travis-ci.org/meteorhacks/meteor-aggregate)
 
-# meteorhacks:aggregate
+# maintained fork of meteorhacks:aggregate
 
 A simple package to add proper aggregation support for Meteor. This package exposes `.aggregate` method on `Mongo.Collection` instances.
 
@@ -10,7 +10,7 @@ A simple package to add proper aggregation support for Meteor. This package expo
 
 Add to your app with
 ```
-meteor add meteorhacks:aggregate
+meteor add sakulstra:aggregate
 ```
 
 Then simply use `.aggregate` function like below.
