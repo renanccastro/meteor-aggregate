@@ -1,8 +1,8 @@
 Package.describe({
-  "summary": "Proper MongoDB aggregations support for Meteor",
-  "version": "1.4.0",
-  "git": "https://github.com/sakulstra/meteor-aggregate",
-  "name": "sakulstra:aggregate"
+  summary: 'Proper MongoDB aggregations support for Meteor',
+  version: '1.4.1',
+  git: 'https://github.com/sakulstra/meteor-aggregate',
+  name: 'sakulstra:aggregate'
 });
 
 Package.onUse(function(api) {
@@ -11,14 +11,10 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   configurePackage(api);
-  api.use([
-    'tinytest', 'accounts-password', 'random'
-  ], ['server']);
+  api.use(['tinytest', 'accounts-password', 'random'], ['server']);
 
   // common before
-  api.addFiles([
-    'test.js'
-  ], ['server']);
+  api.addFiles(['test.js'], ['server']);
 });
 
 function configurePackage(api) {
@@ -26,7 +22,5 @@ function configurePackage(api) {
   api.use(['mongo'], ['server']);
 
   // common before
-  api.addFiles([
-    'index.js',
-  ], ['server']);
+  api.addFiles(['index.js'], ['server']);
 }

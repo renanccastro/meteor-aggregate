@@ -44,6 +44,8 @@ And this package is short and simple. (~20 LOC)
 
 
 ## What the fork?!
-meteorhacks/meteor-aggregate seems pretty unmaintained, which is sad :/
-Meteor 1.7 and it's upgrade to mongodriver v3 introduced some breaking changes
-I want to incorporate https://github.com/meteorhacks/meteor-aggregate/pull/41/files
+meteorhacks/meteor-aggregate seems pretty unmaintained, so let's maintain a fork!
+Meteor 1.7 and it's upgrade to mongodriver v3 introduced some breaking changes which will break meteorhacks:meteor-aggregate.
+
+## Breaking changes
+- `meteorhacks:collection-utils@1.2.0` is no longer a dependency. If you're using meteor <= 1.0.4 you have to add it manually.
