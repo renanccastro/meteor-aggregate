@@ -1,7 +1,7 @@
 wrapAsync = Meteor.wrapAsync || Meteor._wrapAsync;
 
 Mongo.Collection.prototype.aggregate = function(pipelines, options) {
-  let coll;
+  var coll;
   if (this.rawCollection) {
     // >= Meteor 1.0.4
     coll = this.rawCollection();
