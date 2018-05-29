@@ -10,9 +10,8 @@ Mongo.Collection.prototype.aggregate = function(pipelines, options) {
     coll = this._getCollection();
   }
   if (MongoInternals.NpmModules.mongodb.version[0] === '3') {
-    const cursor = wrapAsync(coll.aggregate, coll)(pipelines, options);
-    const value = wrapAsync(cursor.toArray, cursor)();
-    return value;
+    var cursor = wrapAsync(coll.aggregate, coll)(pipelines, options);
+    return wrapAsync(cursor.toArray, cursor)();
   }
   return wrapAsync(coll.aggregate.bind(coll))(pipelines, options);
 };
