@@ -11,14 +11,14 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   configurePackage(api);
-  api.use(['tinytest', 'accounts-password', 'random'], ['server']);
+  api.use(['tinytest', 'random'], ['server']);
 
   // common before
   api.addFiles(['test.js'], ['server']);
 });
 
 function configurePackage(api) {
-  api.versionsFrom('METEOR@1');
+  api.versionsFrom('METEOR@1.8.3');
   api.use(['mongo'], ['server']);
 
   // common before
